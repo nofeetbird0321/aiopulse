@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Paste Stripe Payment Links here before this page can take money.
+   Leave both empty until the links exist. The buy buttons read these
+   two constants. Empty strings and placeholders do not open checkout. */
+const STARTER_PAYMENT_LINK = "";
+const PRO_PAYMENT_LINK = "";
+</script>
+<title>Branded AI Overview tracker | AioPulse</title>
+<meta name="description" content="A branded AI Overview tracker. Each week we check whether Google's AI Overview cites your brand on the queries that matter, and send a short email report.">
+<link rel="canonical" href="https://aiopulse.nofeetbird.tech/">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <a class="mark" href="index.html">AioPulse</a>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#report">Weekly report</a>
+    <a href="#plans">Plans</a>
+    <a href="#example">Example</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="pill">Branded AI Overview tracker</div>
+    <h1>See if Google’s AI answer mentions you.</h1>
+    <p class="lede">AI Overviews now show up on most branded searches. AioPulse checks a fixed list of your queries every week and emails you whether your brand was cited, who was cited instead, and what changed.</p>
+    <p class="note">This is a report, not a ranking guarantee. We record what the overview said. We do not promise a citation.</p>
+  </section>
+
+  <section class="grid">
+    <article class="card" id="how">
+      <h2>How it works</h2>
+      <ol>
+        <li>You subscribe, then reply with one brand name and a fixed query list. Starter holds 10 queries. Pro holds 25, across up to 3 brands.</li>
+        <li>Once a week we look up that same list and note whether Google showed an AI Overview, whether your brand was named in it, which other names were named, and the source links on the overview.</li>
+        <li>You get one email. Pro also includes a this-week versus last-week diff.</li>
+        <li>Cancel anytime. Stopping the subscription stops the next report. There is no ranking work and no promise that a citation will appear.</li>
+      </ol>
+    </article>
+    <article class="card" id="report">
+      <h2>What a weekly report contains</h2>
+      <ul>
+        <li>The date the queries were checked.</li>
+        <li>Each query, unchanged from your list.</li>
+        <li>Whether an AI Overview was present.</li>
+        <li>Cited, missing, or replaced, plus the other names shown when your brand was not the one cited.</li>
+        <li>The source links Google showed on that overview, as URLs.</li>
+        <li>On Pro, a short week-over-week note: same, newly cited, or dropped.</li>
+      </ul>
+      <p class="note">The report describes one weekly check. It is not a live dashboard and it is not a ranking guarantee.</p>
+    </article>
+  </section>
+
+  <section class="section-pad" id="plans">
+    <article class="card">
+      <h2>Plans</h2>
+      <p>Both plans are a weekly email. Same check, different list size. Cancel anytime.</p>
+      <div class="plans">
+        <div class="plan">
+          <div>Starter</div>
+          <strong>$19.90</strong> <span class="per">/ month</span>
+          <p>1 brand, 10 queries, weekly email.</p>
+          <a class="btn buy" data-plan="starter" href="#checkout" aria-disabled="true">Buy Starter</a>
+        </div>
+        <div class="plan pro">
+          <div>Pro</div>
+          <strong>$49.90</strong> <span class="per">/ month</span>
+          <p>3 brands, 25 queries, week-over-week diff.</p>
+          <a class="btn buy" data-plan="pro" href="#checkout" aria-disabled="true">Buy Pro</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section-pad" id="checkout">
+    <article class="card">
+      <h2>Checkout</h2>
+      <p id="pay-note" class="pay-note">Stripe Payment Links go in the two constants at the top of this file, <code>STARTER_PAYMENT_LINK</code> and <code>PRO_PAYMENT_LINK</code>, before the page can take money. Until those are real https links, these buttons do not open checkout.</p>
+      <p>
+        <a class="btn buy" data-plan="starter" href="#checkout" aria-disabled="true">Buy Starter · $19.90</a>
+        <a class="btn buy" data-plan="pro" href="#checkout" aria-disabled="true" style="background:var(--accent)">Buy Pro · $49.90</a>
+      </p>
+      <p class="note">This is a report, not a ranking guarantee. Payment is handled by Stripe only after those links are connected. Card details never sit on this page. Cancel anytime from the Stripe receipt once a subscription exists.</p>
+    </article>
+  </section>
+
+  <section class="section-pad" id="example">
+    <article class="card">
+      <div class="pill">Example · not a real customer</div>
+      <h2>Sample weekly report</h2>
+      <p>The brand, queries, and rows below are invented so you can see the email’s shape. They are not a client, not a measurement, and not a result AioPulse produced.</p>
+      <p><strong>Fictional brand:</strong> Pebbleforge Notebooks<br>
+      <strong>Fictional week:</strong> Monday 5 Oct 2026 (made-up check)<br>
+      <strong>Plan shown:</strong> Pro, so a week-over-week column is included</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Query</th>
+            <th>AI Overview</th>
+            <th>Brand</th>
+            <th>Other names in the overview</th>
+            <th>Source links shown</th>
+            <th>Vs last week</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>pebbleforge notebooks refill</td>
+            <td>Present</td>
+            <td class="tag ok">Cited</td>
+            <td>None</td>
+            <td>pebbleforge.example/refill</td>
+            <td>Same</td>
+          </tr>
+          <tr>
+            <td>best pocket notebook pebbleforge</td>
+            <td>Present</td>
+            <td class="tag miss">Missing</td>
+            <td>Harborfield Notes, Quill &amp; Quartz</td>
+            <td>harborfield.example/pocket, quillquartz.example/compare</td>
+            <td>Dropped</td>
+          </tr>
+          <tr>
+            <td>pebbleforge vs harborfield paper</td>
+            <td>Absent</td>
+            <td class="tag">No overview</td>
+            <td>—</td>
+            <td>—</td>
+            <td>Same</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Example only. .example hostnames are not real sites. Do not treat this table as evidence about any brand.</p>
+    </article>
+  </section>
+</main>
+<footer>
+  <p>Keyword this page is built for: branded AI Overview tracker. In September 2026, DemandSphere reported AI Overviews on tracked branded queries rising from about 26% on 2026-09-01 to above 80% by 2026-09-29. <a href="https://www.demandsphere.com/blog/branded-ai-overviews-september-2026/">Source</a>.</p>
+  <p>AioPulse sends a weekly email report. It does not guarantee a ranking or a citation. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+</footer>
+<script>
+(function () {
+  function usable(value) {
+    if (typeof value !== "string") return false;
+    var url = value.trim();
+    if (!/^https:\/\/\S+$/i.test(url)) return false;
+    if (/example\.(com|org|net)|placeholder|paste|your[_-]?link|todo|changeme|xxx|stripe\.com\/test/i.test(url)) return false;
+    return true;
+  }
+  var links = {
+    starter: usable(STARTER_PAYMENT_LINK) ? STARTER_PAYMENT_LINK.trim() : "",
+    pro: usable(PRO_PAYMENT_LINK) ? PRO_PAYMENT_LINK.trim() : ""
+  };
+  var ready = links.starter && links.pro;
+  document.querySelectorAll("a.buy").forEach(function (btn) {
+    var plan = btn.getAttribute("data-plan");
+    var href = links[plan];
+    if (!href) {
+      btn.setAttribute("href", "#checkout");
+      btn.setAttribute("aria-disabled", "true");
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        var note = document.getElementById("pay-note");
+        if (note) note.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+      return;
+    }
+    btn.setAttribute("href", href);
+    btn.setAttribute("rel", "noopener noreferrer");
+    btn.removeAttribute("aria-disabled");
+  });
+  var note = document.getElementById("pay-note");
+  if (note && ready) note.hidden = true;
+})();
+</script>
+</body>
+</html>
